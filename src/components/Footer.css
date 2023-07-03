@@ -1,0 +1,10 @@
+.social-links.footer {
+
+  justify-content: end;
+  margin-right: 70px;
+}
+.footer-p {
+  margin: 0;
+  /* padding: 0; */
+  font-size: 12px;
+}

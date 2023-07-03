@@ -1,0 +1,72 @@
+.catalog.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.item {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+.item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.brand {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.description {
+  white-space: pre-line;
+
+  font-size: 14px;
+  
+}
+
+.specification {
+  text-align: left;
+  white-space: pre-line;
+  margin-top: 10px;
+}
+
+.specification span {
+  display: block;
+  font-size: 14px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #c0392b;
+}
+
+/* Респонсивність для планшетів */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Респонсивність для мобільних пристроїв */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Респонсивність для дуже малих екранів, наприклад, смартфонів у вертикальному режимі */
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

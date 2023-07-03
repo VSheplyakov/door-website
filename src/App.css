@@ -1,38 +1,284 @@
+/* Підключення шрифту з Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+/* Змінні кольорів */
+:root {
+  --primary-color: royalblue;
+  --secondary-color: #1f1f1f;
+  --text-color: white;
+  --toggle-track-color: #6e6d73;
+  --toggle-checked-color: #1f1f1f;
+  --toggle-checked-hover-color: #3d3c41;
+  --toggle-thumb-color: #6e6d73;
+  --toggle-checked-thumb-color: #1f1f1f;
+  --toggle-checked-thumb-hover-color: #3d3c41;
+  --toggle-dark-track-color: #4d4d4d;
+  --toggle-dark-hover-track-color: black;
+  --social-link-color: #fff;
+  --social-link-hover-color: #aaa;
+}
+
+/* Загальні стилі для всього додатку */
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Стилі для заголовка */
+.App-header,
+.dark .App-header {
+  background-color: var(--primary-color);
+  width: 100%;
+  position: fixed;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Контейнер */
+.container {
+  padding: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Обгортка заголовка */
+.header-wrapper {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+}
+
+/* Заголовок, посилання у навігації */
+h1,
+nav a,
+.dark nav a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* Навігаційне меню */
+nav ul {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.lastEl {
+  margin-left: auto;
+}
+
+/* Підсвітка посилань у навігації при наведенні */
+nav a:hover,
+.dark nav a:hover {
+  text-decoration: underline;
+}
+
+/* Основний вміст сторінки */
+main {
+  padding: 20px;
+  color: var(--primary-color);
+}
+
+/* Секції */
+section {
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+/* Заголовки секцій */
+h2 {
+  color: var(--primary-color);
+}
+
+/* Футер */
+footer,
+.dark footer {
+  background-color: var(--primary-color);
+  padding: 10px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+/* Темна тема */
+.dark {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.dark main,
+.dark h2 {
+  color: var(--text-color);
+}
+
+/* ... попередні стилі ... */
+
+/* Стилі для перемикача */
+.toggle-icon {
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-left: -5px;
+}
+
+.react-toggle {
+  touch-action: none;
+}
+
+.react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track,
+.dark .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: var(--toggle-track-color);
+}
+
+.react-toggle--checked .react-toggle-track,
+.dark .react-toggle--checked .react-toggle-track {
+  background-color: var(--toggle-checked-color);
+}
+
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: var(--toggle-checked-hover-color);
+}
+
+.react-toggle-thumb {
+  border-color: var(--toggle-thumb-color);
+}
+
+.react-toggle--checked .react-toggle-thumb,
+.dark .react-toggle--checked .react-toggle-thumb {
+  border-color: var(--toggle-checked-thumb-color);
+}
+
+.react-toggle--checked .react-toggle-thumb:hover {
+  border-color: var(--toggle-checked-thumb-hover-color);
+}
+
+/* Додані стилі для темної теми */
+.dark .App-header {
+  background-color: var(--secondary-color);
+}
+
+.dark nav a {
+  color: var(--text-color);
+}
+
+.dark main,
+.dark h2 {
+  color: var(--text-color);
+  background-color: var(--toggle-dark-track-color);
+}
+
+.dark footer {
+  background-color: var(--secondary-color);
+}
+
+/* Стилі для логотипу */
+.logo {
+  width: 100px; /* Налаштуйте ширину логотипу за потребою */
+  height: auto; /* Автоматична висота, збережеться пропорція */
+  margin-right: 10px; /* Налаштуйте відступ справа за потребою */
+}
+
+/* Стилі для посилань на соціальні мережі */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 5px;
+  color: var(--social-link-color);
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/* Стилі для кнопки темної теми */
+.dark-mode-toggle {
+  margin-left: 15px;
+}
+
+.social-links a:hover {
+  color: var(--social-link-hover-color);
+}
+
+/* Додаткові стилі для заголовка */
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Стилі для мобільного меню */
+.menu {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0;
+  padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.menu li {
+  display: flex;
+  margin-right: 15px;
+  width: max-content;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.mobile-toggle {
+  display: none;
+}
+
+.mobile-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin-bottom: 5px;
+  transition: 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .main-nav {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .mobile-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .mobile-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .mobile-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .main-nav.open {
+    display: block;
+    /* position: absolute; */
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 40px;
+    z-index: 1;
+  }
+
+  .main-nav.open {
+    background-color: var(--toggle-thumb-color);
+  }
+
+  .main-nav.open ul {
+    flex-direction: column;
+  }
+
+  .main-nav.open li {
+    margin-bottom: 10px;
   }
 }
