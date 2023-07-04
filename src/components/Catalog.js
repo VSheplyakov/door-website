@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './Catalog.css'
+import './Catalog.css';
 
 const Catalog = () => {
   const [data, setData] = useState([]);
@@ -9,8 +9,10 @@ const Catalog = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://sheet.best/api/sheets/faecafee-88f1-4f33-92c5-4e59010e3023'
+          // 'https://sheet.best/api/sheets/faecafee-88f1-4f33-92c5-4e59010e3023'
+          'https://script.google.com/macros/s/AKfycbyhtq-SlYcBBk5Ws0pLuCVaZI2ff7cQhP7qnU9xGlnJs7Zs7TflgVWYVz4TIRqCBoOnIg/exec?t=forecasts'
         );
+        // console.log(response.data)
         setData(response.data);
       } catch (error) {
         console.log(error);
@@ -27,10 +29,14 @@ const Catalog = () => {
         {data.map((item, index) => (
           <div key={index} className="item">
             <img src={item.image} alt="Product" />
-            <p className='brand'>{item.brand}</p>
-            <p className='description'>{item.description}</p>
-            <p className='specification'>{formatSpecifications(item.specifications)}</p>
-            <p>ціна:<span className='price'> {item.price}</span></p>
+            <p className="brand">{item.brand}</p>
+            <p className="description">{item.description}</p>
+            <p className="specification">
+              {formatSpecifications(item.specifications)}
+            </p>
+            <p>
+              ціна:<span className="price"> {item.price}</span>
+            </p>
           </div>
         ))}
       </div>
