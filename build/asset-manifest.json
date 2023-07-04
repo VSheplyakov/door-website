@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ffa038df.css",
+    "main.js": "/static/js/main.e7e2e473.js",
+    "static/js/787.aefc0933.chunk.js": "/static/js/787.aefc0933.chunk.js",
+    "static/media/TamDeDBEPI.png": "/static/media/TamDeDBEPI.1aa0e32187a21db62165.png",
+    "index.html": "/index.html",
+    "main.ffa038df.css.map": "/static/css/main.ffa038df.css.map",
+    "main.e7e2e473.js.map": "/static/js/main.e7e2e473.js.map",
+    "787.aefc0933.chunk.js.map": "/static/js/787.aefc0933.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ffa038df.css",
+    "static/js/main.e7e2e473.js"
+  ]
+}
